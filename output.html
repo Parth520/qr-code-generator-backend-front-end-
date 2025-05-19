@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your QR Code</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F6F8;
+            color: #2C3E50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+            animation: slideIn 0.6s ease-in-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        #qrCode {
+            margin: 20px 0;
+        }
+        
+        .url-display {
+            font-size: 0.95rem;
+            word-break: break-all;
+            margin-bottom: 20px;
+            color: #7F8C8D;
+        }
+        
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        button {
+            background-color: #3498DB;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #2980B9;
+        }
+        
+        .footer {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #95A5A6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Your QR Code</h1>
+        <div id="qrCode"></div>
+        <div class="url-display" id="urlDisplay">
+            <img src="qrcode.png" width="200px" height="200px">
+        </div>
+        <div class="btn-group">
+            <button id="downloadBtn"><a href="qrcode.png"> Download PNG</a></button>
+            <button onclick="window.location.href='/'">Generate Another</button>
+        </div>
+        <div class="footer">Powered by Open Source Tools</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+</body>
+
+</html>
